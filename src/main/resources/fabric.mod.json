@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "violin",
+  "version": "${version}",
+  "name": "Violin",
+  "description": "Проигрывание музыки по прямым ссылкам. Команды: /vplay, /vstop",
+  "authors": ["lain1wakura"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/violin/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.lain.violin.client.ViolinClient"
+    ],
+    "main": [
+      "org.lain.violin.Violin"
+    ]
+  },
+  "mixins": [
+    "violin.mixins.json",
+    {
+      "config": "violin.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
